@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changing button</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #wrapper{
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 50%; */
+            padding: 20px;
+            width: 50%;
+        }
+
+        p{
+            display: block;
+            font-size: 40px;
+            margin: 10px;
+        }
+        
+        #color {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            border-radius: 20px;
+            cursor: pointer;
+            outline: none;
+            font-size: 20px;
+            background-image: linear-gradient(to right, #16A085 0%, #F4D03F  51%, #16A085  100%)
+          }
+
+          #color:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+
+        @media screen and (max-width:425px) {
+            #wrapper{
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <p>background color will change when button is pressed</p>
+    <button type="button" id="color">click me</button>
+</div>
+<script>
+    var colors=["red","blue","green","brown","pink"];
+    var i=0;
+    var color=document.getElementById("color");
+    color.addEventListener("click",function(){
+        document.getElementById("wrapper").style.backgroundColor=colors[i];
+        if(i==colors.length-1){
+            i=0;
+        }
+        else{
+            i=i+1;
+        }
+    })
+</script>
+</body>
+</html>

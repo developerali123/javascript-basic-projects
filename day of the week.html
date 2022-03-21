@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            background-image: linear-gradient(to top, rgb(28, 45, 230), rgb(37, 43, 220), rgb(45, 40, 210), rgb(54, 38, 201), rgb(62, 36, 191), rgb(71, 34, 181), rgb(79, 31, 171), rgb(88, 29, 161), rgb(96, 27, 151), rgb(105, 25, 142), rgb(113, 22, 132), rgb(122, 20, 122));
+        }
+        h1{
+            font-size: 100px;
+        }
+        #box{
+            margin:10px;
+            border: 2px solid black;
+            padding:10px;
+            background-image: linear-gradient(to bottom, rgb(78, 222, 42), rgb(87, 210, 44), rgb(96, 199, 47), rgb(105, 187, 49), rgb(114, 176, 51), rgb(123, 164, 54), rgb(131, 153, 56), rgb(140, 141, 59), rgb(149, 130, 61), rgb(158, 118, 63), rgb(167, 107, 66), rgb(176, 95, 68));
+        }
+        p{
+            font-size: 50px;
+            text-align: center;
+            color: red;
+            font-weight: 600;
+        }
+        q{
+            font-size: 50px;
+            text-align: center;
+            color: blue;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Today is:</h1>
+        <div id="box">
+            <p id="weekend">Display quote of the week</p>
+            <q id="phrase">Display a quote</q>
+        </div>
+    </div>
+    <script>
+        var displayday=document.getElementById("weekend");
+        var phrase=document.getElementById("phrase");
+        var date=new Date();
+        var weekend=["sunday","monday","tuesday","wednesday","thursday","friday","saturday"];
+        var date1=new Date();
+        var weekend1=["second holiday","its first day to school","its second day to school","its third day to school","its fourth day to school","jumma mubarak","first holiday"];
+        var n=weekend[date.getDay()];
+        var n1=weekend1[date1.getDay()];
+        function day(){
+            displayday.innerText=n;
+            phrase.innerText=n1;
+        }
+        day();
+    </script>
+</body>
+</html>

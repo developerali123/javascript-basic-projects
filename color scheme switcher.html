@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background color switcher</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #switcher{
+            list-style: none;
+            display: flex;
+        }
+        #switcher li{
+            width:30px;
+            height:30px;
+            border: 2px solid black;
+            margin-right:25px;
+            cursor: pointer;
+        }
+        h1{
+            font-size: 50px0;
+        }
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #blue{
+            background-color: blue;
+        }
+        #green{
+            background-color: green;
+        }
+        p{
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>color scheme switcher</h1>
+    <ul id="switcher">
+        <li id="red"></li>
+        <li id="yellow"></li>
+        <li id="blue"></li>
+        <li id="green"></li>
+    </ul>
+    <p>click on the colors to change background-color of page</p>
+    <script>
+        var a=document.getElementsByTagName("body");
+        document.getElementById("red").addEventListener("click",function(){
+            a[0].style.backgroundColor="red";
+            a[0].style.color="white";
+        });
+        document.getElementById("yellow").addEventListener("click",function(){
+            a[0].style.backgroundColor="yellow";
+            a[0].style.color="blue";
+        });
+        document.getElementById("green").addEventListener("click",function(){
+            a[0].style.backgroundColor="green";
+            a[0].style.color="white";
+        });
+        document.getElementById("blue").addEventListener("click",function(){
+            a[0].style.backgroundColor="blue";
+            a[0].style.color="white";
+        });
+    </script>
+</body>
+</html>
