@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+        }
+        h1{
+            font-size: 100px;
+        }
+        #root{
+            font-size: 50px;
+            letter-spacing: 10px;
+            display: flex;
+        }
+        #root #days,#hours,#minutes,#seconds{
+            border: 2px solid black;
+            padding: 10px;
+            background: grey;
+            border-radius: 25px;
+        }
+        #root .dot{
+            margin-left: 10px;
+            font-weight: bolder;
+            font-size: 50px;
+        }
+        @media screen and (max-width:425px) {
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Coming Soon</h1>
+    <div id="root"><span id="days"></span><span class="dot">:</span><span id="hours"></span></span><span class="dot">:</span><span id="minutes"></span></span><span class="dot">:</span><span id="seconds"></span></div>
+    <script>
+        var day=document.getElementById("days");
+        var hour=document.getElementById("hours");
+        var minute=document.getElementById("minutes");
+        var second=document.getElementById("seconds");
+        var date=new Date("feb 13,2023 12:00:00");
+        var x=date.getTime();
+        var y=setInterval(function(){ 
+        var now=new Date()
+        var z=now.getTime();
+        var distance=date-now;
+        var days=Math.floor(distance/(1000*60*60*24));
+        var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+        var minutes=Math.floor((distance%(100*60*60))/(1000*60));
+        var seconds=Math.floor((distance%(1000*60))/1000);
+        day.innerHTML=days+"d";
+        hour.innerHTML=hours+"h";
+        minute.innerHTML=minutes+"m";
+        second.innerHTML=seconds+"s";
+        // document.getElementById("root").innerHTML=days+"d"+" : "+hours+"h"+" : "+minutes+"m"+" : "+seconds+"s";
+        if(distance<0){
+            clearInterval(y);
+            document.getElementById("root").innerHTML="time expired";
+        }
+        },1000)
+    </script>
+</body>
+</html>

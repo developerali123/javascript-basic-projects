@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greet message</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            font-size: 50px;
+            background-image: linear-gradient(to bottom, rgb(101, 115, 255), rgb(127, 95, 217), rgb(153, 75, 179), rgb(178, 56, 142), rgb(204, 36, 104), rgb(230, 16, 66), rgb(198, 49, 90), rgb(165, 83, 113), rgb(133, 116, 137), rgb(100, 149, 160), rgb(68, 183, 184), rgb(35, 216, 207));
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var name=prompt("please enter your name");
+        var date=new Date();
+        var hours=date.getHours();
+        if(hours<=12){
+            document.write("good morning  "+name);
+        }
+        else if(hours<=18){
+            document.write("good afternoon  "+name);
+        }
+        else{
+            document.write("good evening  "+name);
+        }
+    </script>
+</body>
+</html>
