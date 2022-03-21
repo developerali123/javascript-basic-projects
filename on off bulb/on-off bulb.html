@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>on/off bulb</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #box{
+            width:50%;
+            border:2px solid black;
+            height: 600px;
+            position: relative;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            position:absolute;
+            top:0;
+            left: 0;
+        }
+        #offbulb{
+            z-index:1;
+        }
+        .blub{
+            z-index: 2;
+        }
+        button{
+            padding: 10px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            width: 100px;
+        }
+        @media screen and (max-width:768px) {
+            #box{
+                width:90%;
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ON/OFF light bulb</h1>
+    <div id="box">
+    <img src="OIP.jpeg" alt="" id="offbulb">
+    <img src="OIP (1).jpeg" alt="" id="onbulb">
+</div>
+<div>
+<button id="add">ON</button>
+<button id="remove">OFF</button>
+</div>
+    <script>
+        $(document).ready(function(){
+            $("#add").click(function(){
+                $("#box #onbulb").addClass("blub");
+            })
+            $("#remove").click(function(){
+                $("#box #onbulb").removeClass("blub");
+            })
+        })
+    </script>
+</body>
+</html>
