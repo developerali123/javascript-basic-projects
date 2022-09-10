@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>birth week</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background-image: radial-gradient(rgb(20, 37, 224), rgb(37, 71, 200), rgb(54, 105, 177), rgb(72, 139, 153), rgb(89, 173, 130), rgb(106, 207, 106), rgb(128, 175, 91), rgb(149, 143, 75), rgb(171, 111, 60), rgb(192, 78, 45), rgb(214, 46, 29), rgb(235, 14, 14));
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            border:2px solid black;
+            height: 40%;
+            background-image: linear-gradient(to left, rgb(52, 54, 82), rgb(82, 64, 107), rgb(113, 75, 132), rgb(143, 85, 157), rgb(174, 96, 182), rgb(204, 106, 207), rgb(175, 91, 212), rgb(147, 75, 216), rgb(118, 60, 221), rgb(89, 45, 226), rgb(61, 29, 230), rgb(32, 14, 235));
+        }
+        h1{
+            font-size: 30px;
+        }
+        input{
+            padding:10px;
+        }
+        input:focus{
+            background-color: pink;
+        }
+        
+        #submit{background-image: linear-gradient(to right, #DC2424 0%, #4A569D  51%, #DC2424  100%)}
+        #submit {
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            cursor: pointer;
+          }
+
+          #submit {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+          #output{
+              font-size: 40px;
+              margin: 20px;
+              font-weight: 600;
+          }
+          @media screen and (max-width:425px) {
+              input{
+                  width: 100%;
+                  margin-bottom: 5px;
+              }
+              #output{
+                  font-size: 25px;
+              }
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>check in which day of week you are born</h1>
+        <div>
+        <input type="number" name="" id="month" placeholder="MM">
+        <input type="number" name="" id="day" placeholder="DD">
+        <input type="number" name="" id="year" placeholder="YYYY">
+    </div>
+        <button id="submit">click</button>
+    </div>
+    <div id="output"></div>
+    <script>
+        var month=document.getElementById("month");
+        var day=document.getElementById("day");
+        var year=document.getElementById("year");
+        var btn=document.getElementById("submit");
+        btn.addEventListener("click",function(){
+            var output=document.getElementById("output");
+            var monthvalue=(parseInt(month.value)-1);
+            var dayvalue=parseInt(day.value);
+            var yearvalue=parseInt(year.value);
+            var months=["January","Feburary","March","April","May","June","July","August","September","October","November","December"];
+            var weekend=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            var date=new Date(yearvalue,monthvalue,dayvalue);
+            var weekday=weekend[date.getDay()];
+            var monthis=months[date.getMonth()];
+            if(weekday===undefined||monthis===undefined){
+                output.innerText="";
+                setTimeout(function(){
+                    output.innerText="please enter valid date";
+                },1000);
+            }
+            else{
+                output.innerText=weekday+", "+monthis+", "+dayvalue+", "+yearvalue;
+            }
+        })
+    </script>
+</body>
+</html>

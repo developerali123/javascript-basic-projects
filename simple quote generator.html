@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f8d1b1ce75.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            width: 50%;
+            border: 2px solid black;
+            padding: 5px;
+        }
+        #quote-display{
+            font-size: 30px;
+        }
+        #author{
+            font-size: 30px;
+            text-align: center;
+        }
+        button{
+            padding:5px;
+            display: block;
+            margin:20px 50px;
+            width:200px;
+            font-size: 20px;
+        }
+        a{
+            padding:5px;
+            display: block;
+            margin:20px 50px;
+            width:100px;
+            border:2px solid black;
+            text-align: center;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random quote generator</h1>
+    <div class="container">
+        <q id="quote-display"></q>
+        <button id="quote" onclick="newquote()">generate quote</button>
+    </div>
+    <script>
+        var quotes=[
+        "I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.",
+        "It is not enough that we do our best; sometimes we must do what is required.",
+        ]
+        function newquote(){
+        var randomnumber=Math.floor(Math.random()*(quotes.length));
+        document.getElementById("quote-display").innerHTML=quotes[randomnumber];
+        }
+    </script>
+</body>
+</html>
