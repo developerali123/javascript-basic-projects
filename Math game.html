@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+        }
+        table{
+            border: 2px solid black;
+            border-spacing: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Math game</h1>
+        <table>
+            <tr>
+                <td><div id="number1">1</div></td>
+                <td><div>+</div></td>
+                <td><div id="number2">2</div></td>
+                <td><div>=</div></td>
+                <td><input type="text" name="" id="name"></td>
+                <td><button type="button" id="btn">check</button></td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var btn=document.getElementById("btn");
+        var number1=Math.floor((Math.random()*10)+1);
+            var number2=Math.floor((Math.random()*10)+1);
+            document.getElementById("number1").innerHTML=number1;
+            document.getElementById("number2").innerHTML=number2;
+            var answer=number1+number2;
+            var userinput=document.getElementById("name");
+            var value=userinput.value;
+        btn.onclick=function(){
+            value=userinput.value;
+            console.log(value);
+            if(value==answer){
+                alert("you are correct");
+            }
+            else{
+                alert("your answer is wrong");
+            }
+            userinput.value="";
+            document.getElementById("number1").innerHTML="";
+            document.getElementById("number2").innerHTML="";
+            number1=Math.floor((Math.random()*10)+1);
+            number2=Math.floor((Math.random()*10)+1);
+            document.getElementById("number1").innerHTML=number1;
+            document.getElementById("number2").innerHTML=number2;
+            answer=number1+number2;
+        }
+    </script>
+</body>
+</html>
